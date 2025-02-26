@@ -1,15 +1,18 @@
-# PROJECT-Statistical-Machine-Learning
-Project of Data Analytics, Data Visualisation, Statistical Machine Learning and Predictive Analysis
+# PROJECT: Statistical Machine Learning
+## Overview
+This project focuses on Data Analytics, Data Visualization, Statistical Machine Learning, and Predictive Analysis.
 
-### THE PROJECT CHALLENGE  
-For this challenge, you will be the data scientist of a multinational retail company.  
-##### Company description: 
-known for its extensive network of hypermarkets, supermarkets, and minimarkets, it has woven itself into the fabric of daily life for countless consumers worldwide. 
-With a commitment to providing a diverse array of products, ranging from groceries to electronics, household goods, and beyond, this retail company caters to the diverse needs of its customer base. 
+## PROJECT CHALLENGE 
+### Context
+As a data scientist for a multinational retail company, your objective is to analyze sales and market data to provide business insights.
+
+### Company description: 
+The company operates a vast network of hypermarkets, supermarkets, and minimarkets worldwide. It offers a wide range of products, from groceries to electronics and household goods, catering to diverse consumer needs.
 
 ### THE DATASETS 
 The company gives you the access to two datasets: sales and market.
-##### sales.csv
+
+##### sales.csv (Daily sales per market)
 This file contains the daily sales for each market.
 
 Column name  | Data type | Notes 
@@ -22,7 +25,7 @@ is_open      | string    |  YES: the market was open on that day. NO: the market
 
 sales_amount | float     | Daily sales in €. It contains only actual sales, no refunds. This implies that only values >= 0 should be present. 
 
-##### market.csv
+##### market.csv (Market registry)
 This file contains the market registry (that is, one row per market).
 
 Column name         | Data type | Notes 
@@ -41,15 +44,15 @@ competitor_distance | integer   | Distance in meters from nearest competitor
 
 has_promotion       | string    | YES: the market may have promotions during the year. NO: the market cannot apply any promotion.
 
-### OBJECTIVES OF THE COMPANY 
+### Company Objectives 
 The company is interested in 2 objectives. Below are the details. 
  
-#### Objective 1 
+#### Objective 1 : Understanding Predictive Relationships
 Considering a linear relationship between target and predictors, the company is interested in 
 understanding the delta changes (that is, a 1-unit increase in the predictor leads to a XX 
 variation in the target).  
  
-#### Objective 2 
+#### Objective 2 : Selecting New Market Locations
 The company in 2024 wants to open 3 new markets: 1 MINI, 1 SUPER and 1 HYPER. 
 There are multiple options to choose from. 
 
@@ -80,8 +83,7 @@ FRANCE  | 12570       | 880                         | 7580                      
 
 ITALY   | 11980       | 790                         | 11560                       | YES 
 
-For this second objective the goal is to find for each market type which is the best one to open 
-in 2024.
+This second objective is to determine the best market to open in 2024 for each type.
 
 ### The Data Sciences Methods applied:
 Data Cleaning (Deduplication, Datatypes Conversion)
@@ -132,7 +134,7 @@ We also check the confidence intervals of each coefficients:
 To estimate the accuracy of our model, we compute the MSE and also others statistics like RSE and R2, to have more information about our model.
 The RSE is 4075.63, the R2 is 0.93 and the MSE is 16609081.09, which is not so bad.
 
-#### Objective 2:
+#### Objective 2: Model Comparison
 Comparasion of the different MSE of all fitted models and choose of the model with the lowest estimated test error(mse):
 
 Model	                             | MSE
@@ -165,9 +167,18 @@ NeuralNetwork	                     | 3.330243e+06
 
 We conclude that the best fitting model for these datas is the Random Forest Regression.
 
-We use our best fitting model found previously, fitted on the whole available training datasets, to make predictions of the potentials sales amounts, for each of these markets candidates. For each type of market, the one with the higher sales amount predictions, was choosen.
+#### Best Model and Market Selection
+
+We use our best fitting model found previously (Random Forest Regression), fitted on the whole available training datasets, to make predictions of the potentials sales amounts, for each of these markets candidates. For each type of market, the one with the higher sales amount predictions, was choosen.
 
 From these predictions, we answer to the company that the best choice, among the candidates is:
 - the french market, for the minimarket, with potential sales amount of 12469,46 €.
 - the french market, for the supermarket, with potential sales amount of 24609,50 €.
 - the french market, for the hypermarket, with potential sales amount of 58743,30 €.
+
+Thus, the recommended locations for new markets in 2024 are all in France.
+
+### Conclusion
+
+This project demonstrates the application of machine learning to support strategic business decisions in retail. The insights derived from statistical models help optimize market expansion strategies and improve overall sales predictions.
+
