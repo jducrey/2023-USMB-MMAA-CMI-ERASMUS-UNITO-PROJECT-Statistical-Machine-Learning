@@ -115,7 +115,7 @@ Machine Learning Models Fitting Tests:
 - Regression Neural Network (Deep Learning Method)
   
 ### The Results:
-#### Objective 1:
+#### Objective 1 : Model Insights
 Looking at the p-value of each coefficient, we can reject the null hypothesis beacuse we have p-value(<0.05) for each predictors.
 
 We clearly see that some predictors are more useful than others especially "square_feet","market_type","avg_customers".
