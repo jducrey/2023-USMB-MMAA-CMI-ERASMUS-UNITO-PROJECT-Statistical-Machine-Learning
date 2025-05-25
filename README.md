@@ -1,6 +1,7 @@
 # PROJECT: Statistical Machine Learning
 ## Overview
 This project focuses on Data Analytics, Data Visualization, Statistical Machine Learning, and Predictive Analysis.
+
 🎓 Project realised during my mobility of studies Erasmus+ of my Master's degree MMAA – Université Savoie Mont Blanc
 
 ## PROJECT CHALLENGE 
